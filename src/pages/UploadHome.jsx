@@ -77,14 +77,14 @@ const UploadHome = () => {
                         </form>
                     </div>
                 ) : (
-                    <div className=' flex flex-col gap-2 mb-4'>
-                        <div className=' h-10 bg-red-200 text-black flex flex-row justify-between items-center mt-4 mx-2 p-10 rounded-lg'>
+                    <div className=' flex flex-col gap-2 mb-4 justify-center items-center'>
+                        <div className=' h-10 bg-red-200 text-black flex flex-row justify-between items-center mt-4 mx-2 p-10 rounded-lg w-4/5'>
                             <span className=' text-xl font-bold'>Name</span>
                             <span className=' text-xl font-bold'>Status</span>
                         </div>
                         {jsonOutput.map((item, index) => (
                             <div
-                                className={` flex justify-between bg-white mx-8 border rounded-md p-2 `}
+                                className={` w-4/5 flex justify-between bg-white mx-8 border rounded-md p-2 `}
                                 key={index}
                             >
                                 <span>{item['User Name']}</span>
