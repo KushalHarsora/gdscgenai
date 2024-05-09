@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Navbar from '../components/Navbar';
 import { toast } from 'sonner';
 import csvtojson from 'csvtojson';
 
@@ -35,9 +34,6 @@ const UploadHome = () => {
                     const csvData = event.target.result;
                     const jsonObj = await csvtojson().fromString(csvData);
                     setJsonOutput(jsonObj);
-                    console.log(jsonObj);
-                    console.log(typeof (jsonObj));
-                    console.log(jsonObj[0]);
                     setState(false); // Change state to false to render the <div>
                 };
                 reader.readAsText(file);
@@ -81,7 +77,7 @@ const UploadHome = () => {
                         </form>
                     </div>
                 ) : (
-                    <div className=' flex flex-col gap-2'>
+                    <div className=' flex flex-col gap-2 mb-4'>
                         <div className=' h-10 bg-red-200 text-black flex flex-row justify-between items-center mt-4 mx-2 p-10 rounded-lg'>
                             <span className=' text-xl font-bold'>Name</span>
                             <span className=' text-xl font-bold'>Status</span>
