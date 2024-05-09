@@ -78,16 +78,29 @@ const UploadHome = () => {
                     </div>
                 ) : (
                     <div className=' flex flex-col gap-2 mb-4 justify-center items-center'>
-                        <div className=' h-10 bg-red-200 text-black flex flex-row justify-between items-center mt-4 mx-2 p-10 rounded-lg w-4/5'>
-                            <span className=' text-xl font-bold'>Name</span>
-                            <span className=' text-xl font-bold'>Status</span>
+                        <div className='  w-4/5 flex justify-between bg-red-200 mx-8 border rounded-md p-2 gap-4 py-4 mt-4'>
+                            <span className=' flex text-xl font-bold w-1/5 justify-start'>Name</span>
+                            <span className=' flex text-xl font-bold w-3/5 justify-center'>Courses</span>
+                            <span className=' flex text-xl font-bold w-1/5 justify-end'>Status</span>
                         </div>
                         {jsonOutput.map((item, index) => (
                             <div
                                 className={` w-4/5 flex justify-between bg-white mx-8 border rounded-md p-2 `}
                                 key={index}
                             >
-                                <span>{item['User Name']}</span>
+                                <span className=' w-1/5'>{item['User Name']}</span>
+                                <span className={`  w-c font-bold ${item['Prompt Design in Vertex AI Completion'] === "1"
+                                            ? "text-green-600"
+                                            : "text-red-600"
+                                        }`}>{item['Prompt Design in Vertex AI Completion']}</span>
+                                <span className={`  w-c font-bold ${item['Develop GenAI Apps with Gemini and Streamlit Completion'] === "1"
+                                            ? "text-green-600"
+                                            : "text-red-600"
+                                        }`}>{item['Develop GenAI Apps with Gemini and Streamlit Completion']}</span>
+                                <span className={`  w-c font-bold ${item['Gen AI Arcade Game Completion'] === "1"
+                                            ? "text-green-600"
+                                            : "text-red-600"
+                                        }`}>{item['Gen AI Arcade Game Completion']}</span>
                                 <span
                                     className={`${item['All 3 Pathways Completed - Yes or No'] === "Yes"
                                             ? "text-green-600"
