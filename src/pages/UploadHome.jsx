@@ -89,11 +89,11 @@ const UploadHome = () => {
                             >
                                 <span>{item['User Name']}</span>
                                 <span
-                                    className={`${item['Profile URL Status'] === "All Good"
+                                    className={`${item['All 3 Pathways Completed - Yes or No'] === "Yes"
                                             ? "text-green-600"
                                             : "text-red-600"
                                         }`}
-                                >{item['Profile URL Status']}</span>
+                                >{item['All 3 Pathways Completed - Yes or No']}</span>
                             </div>
                         ))}
                     </div>
